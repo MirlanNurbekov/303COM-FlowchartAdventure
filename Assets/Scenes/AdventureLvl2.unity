@@ -247,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSolved: 0
   solved: 2
-  sceneName: AdventureLvl2
+  sceneName: Menu
 --- !u!4 &163414665
 Transform:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426414784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: -4.49, z: 0}
+  m_LocalPosition: {x: -7.05, y: -2.83, z: 0}
   m_LocalScale: {x: 1.59375, y: 1.4625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23705,7 +23705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402663216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1.44, z: 0}
+  m_LocalPosition: {x: -6.83, y: -0.88, z: 0}
   m_LocalScale: {x: 1.1295702, y: 0.9741621, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -22,6 +22,7 @@ public class AnswerScript : MonoBehaviour
             //GetComponent<Image>().color = Color.green;
             //Debug.Log("Correct Answer");
             challengeManager.correct();
+            Invoke("SetBackToNormal",0.1f);
 
         }
         else
@@ -29,10 +30,15 @@ public class AnswerScript : MonoBehaviour
             //GetComponent<Image>().color = Color.red;
             //Debug.Log("Wrong");
             challengeManager.wrong();
+            Invoke("SetBackToNormal",0.1f);
 
             //GetComponent<Image>().color = Color.white;
 
         }
+    }
+
+    public void SetBackToNormal(){
+        GetComponent<Image>().color = Color.white;
     }
     
 

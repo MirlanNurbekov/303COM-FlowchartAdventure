@@ -9,6 +9,9 @@ The moment block is located at the correct spot it should become unmovable.*/
 
 public class MovingBlocks : MonoBehaviour
 {
+    //to end the lvl
+    public bool isDone;
+//
     public bool blockIsMovable;
     public bool playerIsInRange;
     public bool blockIsAtCorrectSpot=false;
@@ -58,6 +61,12 @@ public class MovingBlocks : MonoBehaviour
            blockIsAtCorrectSpot = true;
            Debug.Log("YESYESYES");
            blockBody.mass=100000f;
+           //to end the lvl
+           if(isDone==false){
+            isDone=true;
+                GameManager.instance.currentSolved++;
+                GameManager.instance.ChangeScene();
+           }
         }
     }
         public void OnTriggerExit2D(Collider2D other)

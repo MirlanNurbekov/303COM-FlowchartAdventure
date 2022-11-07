@@ -29,6 +29,15 @@ public class ChallengeManager : MonoBehaviour
     //for ez question counter
     public int EzQuestionsCounter;
 
+    // image for question
+    public Image questionImage;
+    public TextMeshProUGUI feedback;
+
+    public static ChallengeManager instance;
+
+    void Awake(){
+        instance = this;
+    }
     private void Start()
     {
         TotalQuestions = QnA.Count;
@@ -42,6 +51,7 @@ public class ChallengeManager : MonoBehaviour
         EzQuestionsPannel.SetActive(false);
         EndOfChallengePannel.SetActive(true);
         ScoreTxt.text = ScoreCount+"/"+TotalQuestions;
+        
     }
 
     //To reload the challenge
@@ -52,6 +62,8 @@ public class ChallengeManager : MonoBehaviour
 
     public void correct()
     {
+        feedback.text = "<color=green>Good job keep it up</color>";
+
         ScoreCalculator();
         QnA.RemoveAt(currentQuestion);
         QuestionReduction();
@@ -61,13 +73,14 @@ public class ChallengeManager : MonoBehaviour
 
     public void wrong()
     {
+        feedback.text = "<color=red>"+QnA[currentQuestion].feedback+"</color>";
         //when answer was wrong
         QnA.RemoveAt(currentQuestion);
         LostLife();
         QuestionReduction();
         ChekGameStatus();
         generateQuestion();
-        LifesCounterTxt.text = ""+lifesLeft;
+        LifesCounterTxt.text = " "+lifesLeft;
     }
 
 
@@ -91,6 +104,12 @@ public class ChallengeManager : MonoBehaviour
         {
             currentQuestion = Random.Range(0, QnA.Count);
             QuestionTxt.text = QnA[currentQuestion].Question;
+            if(QnA[currentQuestion].ImageSprite == null){
+                questionImage.gameObject.SetActive(false);
+            }else{
+                    questionImage.gameObject.SetActive(true);
+                    questionImage.sprite = QnA[currentQuestion].ImageSprite;
+            }
             SetAnswers();
         }
         else
