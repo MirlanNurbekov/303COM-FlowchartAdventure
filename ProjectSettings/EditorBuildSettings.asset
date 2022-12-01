@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AdventureLvl2.unity
     guid: d28281df93336784695ab251d5488205
+  - enabled: 1
+    path: Assets/Scenes/Certificate.unity
+    guid: be64f0ac03ea2254691d91f7cc15bf40
+  - enabled: 1
+    path: Assets/Scenes/AdventureLvl3.unity
+    guid: e290a6068b3573446ac5cb4a4c334fb7
   m_configObjects: {}
